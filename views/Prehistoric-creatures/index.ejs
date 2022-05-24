@@ -5,7 +5,7 @@
 </form>
 
 <ul>
-    <% myCreatures.forEach((creature, index) => { %>
+    <% creature.forEach((creature, index) => { %>
        <li>
            <%= creature.type %>
            <a href="/prehistoric_creatures/edit/<%= index %>">Edit</a>

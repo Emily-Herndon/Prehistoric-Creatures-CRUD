@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
         creatureData = creatureData.filter(creature => (creature.name.toLowerCase() === nameFilter.toLowerCase()))
     }
 
-    res.render('prehistoric-creatures/index.ejs', {myCreatures: creatureData})
+    res.render('prehistoric-creatures/index.ejs', {creature: creatureData})
 })
 
 // NEW CREATURE FORM ROUTE
@@ -70,8 +70,8 @@ router.put('/:id', (req, res) => {
     // update the creature based on the req.params.id & the req.body
     // req.params = which creature 
     // req.body = creature data to update
-    creatureData[req.params.id].name = req.body.name
     creatureData[req.params.id].type = req.body.type
+    creatureData[req.params.id].img_url = req.body.img_url
     // write the json file
     fs.writeFileSync('./prehistoric-creatures.json', JSON.stringify(creatureData))
     // redirect to someplace that has interesting data
