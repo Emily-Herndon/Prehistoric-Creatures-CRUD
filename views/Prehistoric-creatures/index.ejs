@@ -7,7 +7,7 @@
 <ul>
     <% creature.forEach((creature, index) => { %>
        <li>
-           <%= creature.type %>
+           <a href="/prehistoric_creatures/<%= index %> "><%= creature.type %></a> 
            <a href="/prehistoric_creatures/edit/<%= index %>">Edit</a>
 
            <form method="POST" action="/prehistoric_creatures/<%= index %>/?_method=DELETE">
