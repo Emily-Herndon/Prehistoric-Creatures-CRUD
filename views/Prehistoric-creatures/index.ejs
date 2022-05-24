@@ -1,0 +1,19 @@
+<form method="GET" action="/prehistoric_creatures">
+    <label for="typeFilter">Filter by type:</label>
+    <input type="text" name="typeFilter" id="typeFilter"/>
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    <% myCreatures.forEach((creature, index) => { %>
+       <li>
+           <%= creature.type %>
+           <a href="/prehistoric_creatures/edit/<%= index %>">Edit</a>
+
+           <form method="POST" action="/prehistoric_creatures/<%= index %>/?_method=DELETE">
+               <button type="submit">Delete</button>
+           </form>
+        
+        </li> 
+   <% }) %> 
+</ul>
